@@ -22,8 +22,11 @@ To generate new files for UI component, run:
 npm run g
 ```
 
-Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
+## Stencil Docs
 
+[Component API](https://stenciljs.com/docs/api)
+
+Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
 
 ## Naming Components
 
@@ -48,7 +51,3 @@ The first step for all three of these strategies is to [publish to NPM](https://
 - Put a script tag similar to this `<script type='module' src='node_modules/my-component/dist/my-component.esm.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
-### In a stencil-starter app
-- Run `npm install my-component --save`
-- Add an import to the npm packages `import my-component;`
-- Then you can use the element anywhere in your template, JSX, html etc
