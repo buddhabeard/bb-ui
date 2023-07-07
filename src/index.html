@@ -9,6 +9,34 @@
     <script nomodule src="/build/bb-ui.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <h1>BuddhaBeard UI Styleguide</h1>
+
+    <ul>
+      <li>
+        <a href="#buttons">Buttons</a>
+      </li>
+    </ul>
+
+    <div id="buttons">
+      <h2>Buttons</h2>
+      <bb-button>
+        <span>Primary</span>
+      </bb-button>
+      <br />
+      <bb-button variant="secondary">Secondary</bb-button>
+      <br />
+      <bb-button variant="tertiary">Tertiary</bb-button>
+
+      <h3>Button Group</h3>
+      <bb-button-group>
+        <bb-button>Primary</bb-button>
+        <bb-button variant="secondary">Secondary</bb-button>
+        <bb-button variant="tertiary">Tertiary</bb-button>
+      </bb-button-group>
+    </div>
+
+    <div id="dropdown">
+      <bb-dropdown>hello dropdown</bb-dropdown>
+    </div>
   </body>
 </html>

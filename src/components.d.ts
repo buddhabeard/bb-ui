@@ -6,6 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface BbButton {
+        "variant": 'primary' | 'secondary' | 'tertiary';
+    }
+    interface BbButtonGroup {
+    }
+    interface BbDropdown {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +29,24 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLBbButtonElement extends Components.BbButton, HTMLStencilElement {
+    }
+    var HTMLBbButtonElement: {
+        prototype: HTMLBbButtonElement;
+        new (): HTMLBbButtonElement;
+    };
+    interface HTMLBbButtonGroupElement extends Components.BbButtonGroup, HTMLStencilElement {
+    }
+    var HTMLBbButtonGroupElement: {
+        prototype: HTMLBbButtonGroupElement;
+        new (): HTMLBbButtonGroupElement;
+    };
+    interface HTMLBbDropdownElement extends Components.BbDropdown, HTMLStencilElement {
+    }
+    var HTMLBbDropdownElement: {
+        prototype: HTMLBbDropdownElement;
+        new (): HTMLBbDropdownElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +54,20 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "bb-button": HTMLBbButtonElement;
+        "bb-button-group": HTMLBbButtonGroupElement;
+        "bb-dropdown": HTMLBbDropdownElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface BbButton {
+        "variant"?: 'primary' | 'secondary' | 'tertiary';
+    }
+    interface BbButtonGroup {
+    }
+    interface BbDropdown {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +83,9 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "bb-button": BbButton;
+        "bb-button-group": BbButtonGroup;
+        "bb-dropdown": BbDropdown;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +93,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "bb-button": LocalJSX.BbButton & JSXBase.HTMLAttributes<HTMLBbButtonElement>;
+            "bb-button-group": LocalJSX.BbButtonGroup & JSXBase.HTMLAttributes<HTMLBbButtonGroupElement>;
+            "bb-dropdown": LocalJSX.BbDropdown & JSXBase.HTMLAttributes<HTMLBbDropdownElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
