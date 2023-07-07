@@ -5,13 +5,19 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Options } from "./components/bb-dropdown/types";
+export { Options } from "./components/bb-dropdown/types";
 export namespace Components {
     interface BbButton {
         "variant": 'primary' | 'secondary' | 'tertiary';
     }
     interface BbButtonGroup {
     }
+    interface BbContainer {
+    }
     interface BbDropdown {
+        "options": Options;
+        "placeholder": string;
     }
     interface MyComponent {
         /**
@@ -41,6 +47,12 @@ declare global {
         prototype: HTMLBbButtonGroupElement;
         new (): HTMLBbButtonGroupElement;
     };
+    interface HTMLBbContainerElement extends Components.BbContainer, HTMLStencilElement {
+    }
+    var HTMLBbContainerElement: {
+        prototype: HTMLBbContainerElement;
+        new (): HTMLBbContainerElement;
+    };
     interface HTMLBbDropdownElement extends Components.BbDropdown, HTMLStencilElement {
     }
     var HTMLBbDropdownElement: {
@@ -56,6 +68,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "bb-button": HTMLBbButtonElement;
         "bb-button-group": HTMLBbButtonGroupElement;
+        "bb-container": HTMLBbContainerElement;
         "bb-dropdown": HTMLBbDropdownElement;
         "my-component": HTMLMyComponentElement;
     }
@@ -66,7 +79,11 @@ declare namespace LocalJSX {
     }
     interface BbButtonGroup {
     }
+    interface BbContainer {
+    }
     interface BbDropdown {
+        "options"?: Options;
+        "placeholder"?: string;
     }
     interface MyComponent {
         /**
@@ -85,6 +102,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "bb-button": BbButton;
         "bb-button-group": BbButtonGroup;
+        "bb-container": BbContainer;
         "bb-dropdown": BbDropdown;
         "my-component": MyComponent;
     }
@@ -95,6 +113,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "bb-button": LocalJSX.BbButton & JSXBase.HTMLAttributes<HTMLBbButtonElement>;
             "bb-button-group": LocalJSX.BbButtonGroup & JSXBase.HTMLAttributes<HTMLBbButtonGroupElement>;
+            "bb-container": LocalJSX.BbContainer & JSXBase.HTMLAttributes<HTMLBbContainerElement>;
             "bb-dropdown": LocalJSX.BbDropdown & JSXBase.HTMLAttributes<HTMLBbDropdownElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }

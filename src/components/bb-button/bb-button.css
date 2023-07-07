@@ -3,34 +3,29 @@
 }
 
 button {
+  background: var(--color-light);
   border: none;
-  color: #000;
+  color: var(--color-dark);
   cursor: pointer;
   font-weight: 700;
   height: 38px;
-  padding: 0 12px;
+  padding: 0 var(--space-md);
+  opacity: 0.9;
+  transition: all 150ms ease-in-out;
+}
+
+button:hover {
+  opacity: 1;
 }
 
 button.primary {
-  background: skyblue;
-}
-
-button.primary:hover {
-  background: mediumturquoise;
+  background: var(--color-primary);
 }
 
 button.secondary {
-  background: mediumslateblue;
-}
-
-button.secondary:hover {
-  background: slateblue;
+  background: var(--color-secondary);
 }
 
 button.tertiary {
-  background: mediumspringgreen;
-}
-
-button.tertiary:hover {
-  background: mediumseagreen;
+  background: var(--color-tertiary);
 }

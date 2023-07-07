@@ -1,0 +1,28 @@
+:root {
+	/* fonts */
+	--font-family: "";
+
+	/* colors */
+	--color-primary: skyblue;
+	--color-secondary: goldenrod;
+	--color-tertiary: mediumseagreen;
+	--color-dark: #222;
+	--color-light: #eee;
+
+	/* breakpoints */
+	--bp-mobile: 720px;
+	--bp-tablet: 1020px;
+	--bp-desktop: 1920px;
+
+	/* border */
+	--rounded: 8px;
+	--rounded-md: 12px;
+	--rounded-lg: 18px;
+	--round: 50%;
+
+	/* margin & padding */
+	--space-sm: 8px;
+	--space-md: 16px;
+	--space-lg: 32px;
+	--space-xl: 48px;
+}

@@ -6,3 +6,11 @@
 .btn {
   background: var(--color-dark);
 }
+
+.list {
+  visibility: hidden;
+}
+
+.list.show {
+  visibility: visible;
+}
