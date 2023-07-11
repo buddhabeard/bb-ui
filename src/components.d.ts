@@ -15,6 +15,8 @@ export namespace Components {
         "cardSummary": BlogCardProps['cardSummary'];
         "cardTitle": BlogCardProps['cardTitle'];
     }
+    interface BlogCards {
+    }
 }
 declare global {
     interface HTMLBlogCardElement extends Components.BlogCard, HTMLStencilElement {
@@ -23,8 +25,15 @@ declare global {
         prototype: HTMLBlogCardElement;
         new (): HTMLBlogCardElement;
     };
+    interface HTMLBlogCardsElement extends Components.BlogCards, HTMLStencilElement {
+    }
+    var HTMLBlogCardsElement: {
+        prototype: HTMLBlogCardsElement;
+        new (): HTMLBlogCardsElement;
+    };
     interface HTMLElementTagNameMap {
         "blog-card": HTMLBlogCardElement;
+        "blog-cards": HTMLBlogCardsElement;
     }
 }
 declare namespace LocalJSX {
@@ -35,8 +44,11 @@ declare namespace LocalJSX {
         "cardSummary"?: BlogCardProps['cardSummary'];
         "cardTitle"?: BlogCardProps['cardTitle'];
     }
+    interface BlogCards {
+    }
     interface IntrinsicElements {
         "blog-card": BlogCard;
+        "blog-cards": BlogCards;
     }
 }
 export { LocalJSX as JSX };
@@ -44,6 +56,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "blog-card": LocalJSX.BlogCard & JSXBase.HTMLAttributes<HTMLBlogCardElement>;
+            "blog-cards": LocalJSX.BlogCards & JSXBase.HTMLAttributes<HTMLBlogCardsElement>;
         }
     }
 }
