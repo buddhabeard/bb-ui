@@ -1,7 +1,16 @@
 import { Config } from '@stencil/core';
+import { postcss } from '@stencil/postcss';
+import autoprefixer from 'autoprefixer';
+import tailwindcss from 'tailwindcss';
 
 export const config: Config = {
-  namespace: 'bb-ui',
+  namespace: 'buddhabeard',
+  globalStyle: 'src/global/buddhabeard.css',
+  plugins: [
+    postcss({
+      plugins: [tailwindcss(), autoprefixer()],
+    }),
+  ],
   outputTargets: [
     {
       type: 'dist',
@@ -19,6 +28,6 @@ export const config: Config = {
     },
   ],
   testing: {
-    browserHeadless: "new",
+    browserHeadless: 'new',
   },
 };

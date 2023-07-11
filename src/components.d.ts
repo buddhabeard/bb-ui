@@ -5,98 +5,58 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { BlogCardProps } from "./components/blog-card/blog-card";
+export { BlogCardProps } from "./components/blog-card/blog-card";
 export namespace Components {
-    interface BbButton {
-        "variant": 'primary' | 'secondary' | 'tertiary';
+    interface BlogCard {
+        "cardCategory": BlogCardProps['cardCategory'];
+        "cardImage": BlogCardProps['cardImage'];
+        "cardLink": BlogCardProps['cardLink'];
+        "cardSummary": BlogCardProps['cardSummary'];
+        "cardTitle": BlogCardProps['cardTitle'];
     }
-    interface BbButtonGroup {
-    }
-    interface BbDropdown {
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface BlogCards {
     }
 }
 declare global {
-    interface HTMLBbButtonElement extends Components.BbButton, HTMLStencilElement {
+    interface HTMLBlogCardElement extends Components.BlogCard, HTMLStencilElement {
     }
-    var HTMLBbButtonElement: {
-        prototype: HTMLBbButtonElement;
-        new (): HTMLBbButtonElement;
+    var HTMLBlogCardElement: {
+        prototype: HTMLBlogCardElement;
+        new (): HTMLBlogCardElement;
     };
-    interface HTMLBbButtonGroupElement extends Components.BbButtonGroup, HTMLStencilElement {
+    interface HTMLBlogCardsElement extends Components.BlogCards, HTMLStencilElement {
     }
-    var HTMLBbButtonGroupElement: {
-        prototype: HTMLBbButtonGroupElement;
-        new (): HTMLBbButtonGroupElement;
-    };
-    interface HTMLBbDropdownElement extends Components.BbDropdown, HTMLStencilElement {
-    }
-    var HTMLBbDropdownElement: {
-        prototype: HTMLBbDropdownElement;
-        new (): HTMLBbDropdownElement;
-    };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLBlogCardsElement: {
+        prototype: HTMLBlogCardsElement;
+        new (): HTMLBlogCardsElement;
     };
     interface HTMLElementTagNameMap {
-        "bb-button": HTMLBbButtonElement;
-        "bb-button-group": HTMLBbButtonGroupElement;
-        "bb-dropdown": HTMLBbDropdownElement;
-        "my-component": HTMLMyComponentElement;
+        "blog-card": HTMLBlogCardElement;
+        "blog-cards": HTMLBlogCardsElement;
     }
 }
 declare namespace LocalJSX {
-    interface BbButton {
-        "variant"?: 'primary' | 'secondary' | 'tertiary';
+    interface BlogCard {
+        "cardCategory"?: BlogCardProps['cardCategory'];
+        "cardImage"?: BlogCardProps['cardImage'];
+        "cardLink"?: BlogCardProps['cardLink'];
+        "cardSummary"?: BlogCardProps['cardSummary'];
+        "cardTitle"?: BlogCardProps['cardTitle'];
     }
-    interface BbButtonGroup {
-    }
-    interface BbDropdown {
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface BlogCards {
     }
     interface IntrinsicElements {
-        "bb-button": BbButton;
-        "bb-button-group": BbButtonGroup;
-        "bb-dropdown": BbDropdown;
-        "my-component": MyComponent;
+        "blog-card": BlogCard;
+        "blog-cards": BlogCards;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "bb-button": LocalJSX.BbButton & JSXBase.HTMLAttributes<HTMLBbButtonElement>;
-            "bb-button-group": LocalJSX.BbButtonGroup & JSXBase.HTMLAttributes<HTMLBbButtonGroupElement>;
-            "bb-dropdown": LocalJSX.BbDropdown & JSXBase.HTMLAttributes<HTMLBbDropdownElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "blog-card": LocalJSX.BlogCard & JSXBase.HTMLAttributes<HTMLBlogCardElement>;
+            "blog-cards": LocalJSX.BlogCards & JSXBase.HTMLAttributes<HTMLBlogCardsElement>;
         }
     }
 }

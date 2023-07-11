@@ -3,40 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>BuddhaBeard UI</title>
 
-    <script type="module" src="/build/bb-ui.esm.js"></script>
-    <script nomodule src="/build/bb-ui.js"></script>
+    <link rel="stylesheet" href="/build/buddhabeard.css" />
+    <script type="module" src="/build/buddhabeard.esm.js"></script>
+    <script nomodule src="/build/buddhabeard.js"></script>
   </head>
   <body>
-    <h1>BuddhaBeard UI Styleguide</h1>
-
-    <ul>
-      <li>
-        <a href="#buttons">Buttons</a>
-      </li>
-    </ul>
-
-    <div id="buttons">
-      <h2>Buttons</h2>
-      <bb-button>
-        <span>Primary</span>
-      </bb-button>
-      <br />
-      <bb-button variant="secondary">Secondary</bb-button>
-      <br />
-      <bb-button variant="tertiary">Tertiary</bb-button>
-
-      <h3>Button Group</h3>
-      <bb-button-group>
-        <bb-button>Primary</bb-button>
-        <bb-button variant="secondary">Secondary</bb-button>
-        <bb-button variant="tertiary">Tertiary</bb-button>
-      </bb-button-group>
-    </div>
-
-    <div id="dropdown">
-      <bb-dropdown>hello dropdown</bb-dropdown>
-    </div>
+    <blog-card card-title="Test 1" card-summary="This is the summary area for things" card-category="General"></blog-card>
   </body>
 </html>

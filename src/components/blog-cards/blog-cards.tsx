@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'bb-button-group',
-  styleUrl: 'bb-button-group.css',
+  tag: 'blog-cards',
   shadow: true,
 })
-export class BbButtonGroup {
+export class BlogCards {
+
   render() {
     return (
       <Host>
@@ -13,4 +13,5 @@ export class BbButtonGroup {
       </Host>
     );
   }
+
 }
