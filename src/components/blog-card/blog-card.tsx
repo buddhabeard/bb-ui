@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, Host, h } from '@stencil/core';
 
 export type BlogCardProps = {
   cardCategory: string;
@@ -19,9 +19,8 @@ export class BlogCard {
   @Prop() cardLink: BlogCardProps['cardLink'];
 
   render() {
-    console.log(this.cardSummary);
     return (
-      <div class="p-4 md:w-1/3">
+      <Host class="p-4 md:w-1/3">
         <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
           {this.cardImage && <img class="lg:h-48 md:h-36 w-full object-cover object-center" src={this.cardImage} alt={this.cardTitle || 'image'} />}
 
@@ -43,7 +42,7 @@ export class BlogCard {
             </div>
           </div>
         </div>
-      </div>
+      </Host>
     );
   }
 }
