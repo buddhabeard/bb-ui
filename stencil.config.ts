@@ -1,8 +1,16 @@
 import { Config } from '@stencil/core';
+import { postcss } from '@stencil/postcss';
+import autoprefixer from 'autoprefixer';
+import tailwindcss from 'tailwindcss';
 
 export const config: Config = {
-  namespace: 'bb-ui',
-  globalStyle: 'src/global/global.css',
+  namespace: 'buddhabeard',
+  globalStyle: 'src/global/buddhabeard.css',
+  plugins: [
+    postcss({
+      plugins: [tailwindcss(), autoprefixer()],
+    }),
+  ],
   outputTargets: [
     {
       type: 'dist',

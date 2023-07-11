@@ -5,58 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>BuddhaBeard UI</title>
 
-    <link rel="stylesheet" href="/build/bb-ui.css" />
-    <script type="module" src="/build/bb-ui.esm.js"></script>
-    <script nomodule src="/build/bb-ui.js"></script>
+    <link rel="stylesheet" href="/build/buddhabeard.css" />
+    <script type="module" src="/build/buddhabeard.esm.js"></script>
+    <script nomodule src="/build/buddhabeard.js"></script>
   </head>
   <body>
-    <h1>BuddhaBeard UI</h1>
-
-    <ul>
-      <li>
-        <a href="#buttons">Buttons</a>
-      </li>
-      <li>
-        <a href="#dropdown">Dropdown</a>
-      </li>
-    </ul>
-
-    <div id="buttons">
-      <h2>Buttons</h2>
-      <bb-button>
-        <span>Primary</span>
-      </bb-button>
-      <br />
-      <bb-button variant="secondary">Secondary</bb-button>
-      <br />
-      <bb-button variant="tertiary">Tertiary</bb-button>
-
-      <h3>Button Group</h3>
-      <bb-button-group>
-        <bb-button>Primary</bb-button>
-        <bb-button variant="secondary">Secondary</bb-button>
-        <bb-button variant="tertiary">Tertiary</bb-button>
-      </bb-button-group>
-    </div>
-
-    <br />
-    <hr />
-    <br />
-
-    <div id="dropdown">
-      <h2>Dropdown</h2>
-      <bb-dropdown></bb-dropdown>
-    </div>
-
-    <script>
-      /*  for applying data to attributes  */
-      document.querySelector('bb-dropdown').options = [
-        { label: 'Option 1', value: 'option1' },
-        { label: 'Option 2', value: 'option2' },
-        { label: 'Option 3', value: 'option3' },
-        { label: 'Option 4', value: 'option4' },
-        { label: 'Option 5', value: 'option5' },
-      ];
-    </script>
+    <blog-card card-title="Test 1" card-summary="This is the summary area for things" card-category="General"></blog-card>
   </body>
 </html>
