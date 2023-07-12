@@ -1,12 +1,5 @@
 import { Component, Prop, Host, h } from '@stencil/core';
-
-export type BlogCardProps = {
-  cardCategory: string;
-  cardImage: string;
-  cardSummary: string;
-  cardTitle: string;
-  cardLink: string;
-};
+import { BlogCardProps } from '../../types/Card';
 
 @Component({
   tag: 'blog-card',
@@ -17,6 +10,7 @@ export class BlogCard {
   @Prop() cardSummary: BlogCardProps['cardSummary'];
   @Prop() cardTitle: BlogCardProps['cardTitle'];
   @Prop() cardLink: BlogCardProps['cardLink'];
+  @Prop() cardFooterText: BlogCardProps['cardFooterText'];
 
   render() {
     return (
@@ -33,7 +27,7 @@ export class BlogCard {
 
             <div class="flex items-center flex-wrap">
               <a class="text-pink-500 inline-flex items-center md:mb-2 lg:mb-0" href={this.cardLink}>
-                Learn More
+                {this.cardFooterText || 'Learn More'}
                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="M12 5l7 7-7 7"></path>
