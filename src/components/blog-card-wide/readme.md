@@ -1,4 +1,4 @@
-# blog-card
+# blog-card-wide
 
 
 
@@ -9,7 +9,6 @@
 
 | Property         | Attribute          | Description | Type     | Default     |
 | ---------------- | ------------------ | ----------- | -------- | ----------- |
-| `cardCategory`   | `card-category`    |             | `string` | `undefined` |
 | `cardFooterText` | `card-footer-text` |             | `string` | `undefined` |
 | `cardImage`      | `card-image`       |             | `string` | `undefined` |
 | `cardLink`       | `card-link`        |             | `string` | `undefined` |

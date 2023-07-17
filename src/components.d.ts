@@ -5,11 +5,23 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { BlogCardProps } from "./components/blog-card/blog-card";
-export { BlogCardProps } from "./components/blog-card/blog-card";
+import { BlogCardProps } from "./types/Card";
+export { BlogCardProps } from "./types/Card";
 export namespace Components {
+    interface BasicCta {
+        "buttonText": string;
+        "headingText": string;
+    }
     interface BlogCard {
         "cardCategory": BlogCardProps['cardCategory'];
+        "cardFooterText": BlogCardProps['cardFooterText'];
+        "cardImage": BlogCardProps['cardImage'];
+        "cardLink": BlogCardProps['cardLink'];
+        "cardSummary": BlogCardProps['cardSummary'];
+        "cardTitle": BlogCardProps['cardTitle'];
+    }
+    interface BlogCardWide {
+        "cardFooterText": BlogCardProps['cardFooterText'];
         "cardImage": BlogCardProps['cardImage'];
         "cardLink": BlogCardProps['cardLink'];
         "cardSummary": BlogCardProps['cardSummary'];
@@ -17,13 +29,31 @@ export namespace Components {
     }
     interface BlogCards {
     }
+    interface BlogCardsWide {
+    }
+    interface CtaSlider {
+        "heading": string;
+        "text": string;
+    }
 }
 declare global {
+    interface HTMLBasicCtaElement extends Components.BasicCta, HTMLStencilElement {
+    }
+    var HTMLBasicCtaElement: {
+        prototype: HTMLBasicCtaElement;
+        new (): HTMLBasicCtaElement;
+    };
     interface HTMLBlogCardElement extends Components.BlogCard, HTMLStencilElement {
     }
     var HTMLBlogCardElement: {
         prototype: HTMLBlogCardElement;
         new (): HTMLBlogCardElement;
+    };
+    interface HTMLBlogCardWideElement extends Components.BlogCardWide, HTMLStencilElement {
+    }
+    var HTMLBlogCardWideElement: {
+        prototype: HTMLBlogCardWideElement;
+        new (): HTMLBlogCardWideElement;
     };
     interface HTMLBlogCardsElement extends Components.BlogCards, HTMLStencilElement {
     }
@@ -31,14 +61,42 @@ declare global {
         prototype: HTMLBlogCardsElement;
         new (): HTMLBlogCardsElement;
     };
+    interface HTMLBlogCardsWideElement extends Components.BlogCardsWide, HTMLStencilElement {
+    }
+    var HTMLBlogCardsWideElement: {
+        prototype: HTMLBlogCardsWideElement;
+        new (): HTMLBlogCardsWideElement;
+    };
+    interface HTMLCtaSliderElement extends Components.CtaSlider, HTMLStencilElement {
+    }
+    var HTMLCtaSliderElement: {
+        prototype: HTMLCtaSliderElement;
+        new (): HTMLCtaSliderElement;
+    };
     interface HTMLElementTagNameMap {
+        "basic-cta": HTMLBasicCtaElement;
         "blog-card": HTMLBlogCardElement;
+        "blog-card-wide": HTMLBlogCardWideElement;
         "blog-cards": HTMLBlogCardsElement;
+        "blog-cards-wide": HTMLBlogCardsWideElement;
+        "cta-slider": HTMLCtaSliderElement;
     }
 }
 declare namespace LocalJSX {
+    interface BasicCta {
+        "buttonText"?: string;
+        "headingText"?: string;
+    }
     interface BlogCard {
         "cardCategory"?: BlogCardProps['cardCategory'];
+        "cardFooterText"?: BlogCardProps['cardFooterText'];
+        "cardImage"?: BlogCardProps['cardImage'];
+        "cardLink"?: BlogCardProps['cardLink'];
+        "cardSummary"?: BlogCardProps['cardSummary'];
+        "cardTitle"?: BlogCardProps['cardTitle'];
+    }
+    interface BlogCardWide {
+        "cardFooterText"?: BlogCardProps['cardFooterText'];
         "cardImage"?: BlogCardProps['cardImage'];
         "cardLink"?: BlogCardProps['cardLink'];
         "cardSummary"?: BlogCardProps['cardSummary'];
@@ -46,17 +104,31 @@ declare namespace LocalJSX {
     }
     interface BlogCards {
     }
+    interface BlogCardsWide {
+    }
+    interface CtaSlider {
+        "heading"?: string;
+        "text"?: string;
+    }
     interface IntrinsicElements {
+        "basic-cta": BasicCta;
         "blog-card": BlogCard;
+        "blog-card-wide": BlogCardWide;
         "blog-cards": BlogCards;
+        "blog-cards-wide": BlogCardsWide;
+        "cta-slider": CtaSlider;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "basic-cta": LocalJSX.BasicCta & JSXBase.HTMLAttributes<HTMLBasicCtaElement>;
             "blog-card": LocalJSX.BlogCard & JSXBase.HTMLAttributes<HTMLBlogCardElement>;
+            "blog-card-wide": LocalJSX.BlogCardWide & JSXBase.HTMLAttributes<HTMLBlogCardWideElement>;
             "blog-cards": LocalJSX.BlogCards & JSXBase.HTMLAttributes<HTMLBlogCardsElement>;
+            "blog-cards-wide": LocalJSX.BlogCardsWide & JSXBase.HTMLAttributes<HTMLBlogCardsWideElement>;
+            "cta-slider": LocalJSX.CtaSlider & JSXBase.HTMLAttributes<HTMLCtaSliderElement>;
         }
     }
 }

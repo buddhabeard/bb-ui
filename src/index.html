@@ -4,12 +4,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>BuddhaBeard UI</title>
-
     <link rel="stylesheet" href="/build/buddhabeard.css" />
     <script type="module" src="/build/buddhabeard.esm.js"></script>
     <script nomodule src="/build/buddhabeard.js"></script>
+    <style>
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 300px;
+        margin: 0 auto 30px;
+        justify-content: center;
+      }
+
+      h3 {
+        font-size: 36px;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <blog-card card-title="Test 1" card-summary="This is the summary area for things" card-category="General"></blog-card>
+    <section>
+      <h3>Blog Card</h3>
+      <blog-card card-title="Test 1" card-summary="This is the summary area for things" card-category="General" card-link="https://buddhabeard.com"></blog-card>
+    </section>
+
+    <h3>Blog Cards</h3>
+    <blog-cards>
+      <blog-card card-title="Test 1" card-summary="This is the summary area for things" card-category="General"></blog-card>
+      <blog-card card-title="Test 1" card-summary="This is the summary area for things" card-category="General"></blog-card>
+      <blog-card card-title="Test 1" card-summary="This is the summary area for things" card-category="General"></blog-card>
+    </blog-cards>
+
+    <h3>Blog Cards - Wide</h3>
+    <blog-cards-wide>
+      <blog-card-wide card-title="Test 1" card-summary="This is the summary area for things"></blog-card-wide>
+      <blog-card-wide card-title="Test 1" card-summary="This is the summary area for things"></blog-card-wide>
+      <blog-card-wide card-title="Test 1" card-summary="This is the summary area for things"></blog-card-wide>
+    </blog-cards-wide>
+
+    <h3>Basic CTA</h3>
+    <basic-cta heading-text="This is the main selling point!" button-text="Let's Go!"></basic-cta>
   </body>
 </html>

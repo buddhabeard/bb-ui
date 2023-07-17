@@ -1,7 +1,7 @@
 import { BlogCardProps } from '../components';
 
 export type BlogData = {
-  cards: BlogCardProps[];
+  cards: Omit<BlogCardProps, 'cardFooterText'>[];
 };
 
 const blogData: BlogData = {
