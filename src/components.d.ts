@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BlogCardProps } from "./types/Card";
 export { BlogCardProps } from "./types/Card";
 export namespace Components {
+    interface BasicCta {
+        "buttonText": string;
+        "headingText": string;
+    }
     interface BlogCard {
         "cardCategory": BlogCardProps['cardCategory'];
         "cardFooterText": BlogCardProps['cardFooterText'];
@@ -33,6 +37,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLBasicCtaElement extends Components.BasicCta, HTMLStencilElement {
+    }
+    var HTMLBasicCtaElement: {
+        prototype: HTMLBasicCtaElement;
+        new (): HTMLBasicCtaElement;
+    };
     interface HTMLBlogCardElement extends Components.BlogCard, HTMLStencilElement {
     }
     var HTMLBlogCardElement: {
@@ -64,6 +74,7 @@ declare global {
         new (): HTMLCtaSliderElement;
     };
     interface HTMLElementTagNameMap {
+        "basic-cta": HTMLBasicCtaElement;
         "blog-card": HTMLBlogCardElement;
         "blog-card-wide": HTMLBlogCardWideElement;
         "blog-cards": HTMLBlogCardsElement;
@@ -72,6 +83,10 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface BasicCta {
+        "buttonText"?: string;
+        "headingText"?: string;
+    }
     interface BlogCard {
         "cardCategory"?: BlogCardProps['cardCategory'];
         "cardFooterText"?: BlogCardProps['cardFooterText'];
@@ -96,6 +111,7 @@ declare namespace LocalJSX {
         "text"?: string;
     }
     interface IntrinsicElements {
+        "basic-cta": BasicCta;
         "blog-card": BlogCard;
         "blog-card-wide": BlogCardWide;
         "blog-cards": BlogCards;
@@ -107,6 +123,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "basic-cta": LocalJSX.BasicCta & JSXBase.HTMLAttributes<HTMLBasicCtaElement>;
             "blog-card": LocalJSX.BlogCard & JSXBase.HTMLAttributes<HTMLBlogCardElement>;
             "blog-card-wide": LocalJSX.BlogCardWide & JSXBase.HTMLAttributes<HTMLBlogCardWideElement>;
             "blog-cards": LocalJSX.BlogCards & JSXBase.HTMLAttributes<HTMLBlogCardsElement>;
